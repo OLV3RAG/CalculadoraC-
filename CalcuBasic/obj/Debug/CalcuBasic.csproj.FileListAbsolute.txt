@@ -1,0 +1,11 @@
+C:\Users\DAY-V\Desktop\Tests\CalcuBasic\bin\Debug\CalcuBasic.exe.config
+C:\Users\DAY-V\Desktop\Tests\CalcuBasic\bin\Debug\CalcuBasic.exe
+C:\Users\DAY-V\Desktop\Tests\CalcuBasic\bin\Debug\CalcuBasic.pdb
+C:\Users\DAY-V\Desktop\Tests\CalcuBasic\obj\Debug\CalcuBasic.csproj.AssemblyReference.cache
+C:\Users\DAY-V\Desktop\Tests\CalcuBasic\obj\Debug\CalcuBasic.Form1.resources
+C:\Users\DAY-V\Desktop\Tests\CalcuBasic\obj\Debug\CalcuBasic.Properties.Resources.resources
+C:\Users\DAY-V\Desktop\Tests\CalcuBasic\obj\Debug\CalcuBasic.csproj.GenerateResource.cache
+C:\Users\DAY-V\Desktop\Tests\CalcuBasic\obj\Debug\CalcuBasic.csproj.CoreCompileInputs.cache
+C:\Users\DAY-V\Desktop\Tests\CalcuBasic\obj\Debug\CalcuBasic.exe
+C:\Users\DAY-V\Desktop\Tests\CalcuBasic\obj\Debug\CalcuBasic.pdb
+C:\Users\DAY-V\Desktop\Tests\CalcuBasic\obj\Debug\CalcuBasic.exe.config
