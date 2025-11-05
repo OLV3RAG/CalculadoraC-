@@ -169,7 +169,7 @@ namespace CalcuBasic
             }
             else
             {
-                operaciones.CalcularDiv(valores);
+                valores.Resultado = operaciones.CalcularDiv(valores);
             }
             txtResultado.Text = "/";
         }
@@ -184,7 +184,7 @@ namespace CalcuBasic
             }
        else
             {
-                operaciones.CalcularMult(valores);
+                valores.Resultado = operaciones.CalcularMult(valores);
             }
                 txtResultado.Text = "x";
         }
@@ -199,7 +199,7 @@ namespace CalcuBasic
             }
        else
             {
-                operaciones.CalcularRes(valores);
+                valores.Resultado = operaciones.CalcularRes(valores);
             }
             txtResultado.Text = "-";
         }
@@ -214,7 +214,7 @@ namespace CalcuBasic
             }
            else
             {
-                operaciones.CalcularSum(valores);
+                valores.Resultado = operaciones.CalcularSum(valores);
             }
              txtResultado.Text = "+";
         }
@@ -229,31 +229,31 @@ namespace CalcuBasic
             switch (operador)
             {
                 case '+':
-                    operaciones.CalcularSum(valores);
+                    valores.Resultado = operaciones.CalcularSum(valores);
                     txtResultado.Text = $"{valores.Num1 + valores.Num2}";
                     AjustarTamanoTexto();
                     break;
 
                 case '-':
-                    operaciones.CalcularRes(valores);
+                   valores.Resultado = operaciones.CalcularRes(valores);
                     txtResultado.Text = $"{valores.Num1 - valores.Num2}";
                     AjustarTamanoTexto();
                     break;
 
                 case 'x':
-                    operaciones.CalcularMult(valores);
+                    valores.Resultado = operaciones.CalcularMult(valores);
                     txtResultado.Text = $"{valores.Num1 * valores.Num2}";
                     AjustarTamanoTexto();
                     break;
 
                 case '/':
-                    operaciones.CalcularSum(valores);
+                   valores.Resultado = operaciones.CalcularSum(valores);
                     txtResultado.Text = $"{valores.Num1 / valores.Num2}";
                     AjustarTamanoTexto();
                     break;
 
                 case '%':
-                    operaciones.CalcularPerc(valores);
+                    valores.Resultado = operaciones.CalcularPerc(valores);
                     txtResultado.Text = $"{(valores.Num1 * valores.Num2) / 100}";
                     AjustarTamanoTexto();
                     break;
