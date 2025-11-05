@@ -222,7 +222,7 @@ namespace CalcuBasic
 
                 case '%':
                     operaciones.CalcularPerc(valores);
-                    txtResultado.Text = $"{(valores.Num1 / valores.Num2) / 100}";
+                    txtResultado.Text = $"{(valores.Num1 * valores.Num2) / 100}";
                     AjustarTamanoTexto();
                     break;
             }

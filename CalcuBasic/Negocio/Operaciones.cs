@@ -37,7 +37,7 @@ namespace CalcuBasic.Negocio
         {
             if (valores.Num2 == 0)
                 throw new DivideByZeroException("No se puede dividir entre cero.");
-            valores.Resultado = (int)(decimal)(valores.Num1 / valores.Num2) / 100;
+            valores.Resultado = (int)(decimal)(valores.Num1 * valores.Num2) / 100;
             return valores.Resultado;
         }
     }
