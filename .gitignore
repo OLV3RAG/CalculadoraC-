@@ -1,0 +1,29 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+*.pdb
+*.user
+*.suo
+*.cache
+*.ncb
+*.aps
+*.log
+*.vspscc
+*.vssscc
+
+# Visual Studio files
+.vs/
+*.sln.docstates
+*.vsp
+*.vsw
+*.bak
+*.resharper
+
+# NuGet packages
+packages/
+
+# Other common files to ignore
+Thumbs.db
+Desktop.ini

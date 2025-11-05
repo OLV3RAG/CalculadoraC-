@@ -84,7 +84,9 @@ namespace CalcuBasic
 
         private void btnPercent_Click(object sender, EventArgs e)
         {
-            AgregarTexto("%");
+            operador = '%';
+            valores.Num1 = Convert.ToDouble(txtResultado.Text);
+            txtResultado.Text = "%";
         }
 
         private void btnAC_Click(object sender, EventArgs e)
@@ -215,6 +217,12 @@ namespace CalcuBasic
                 case '/':
                     operaciones.CalcularSum(valores);
                     txtResultado.Text = $"{valores.Num1 / valores.Num2}";
+                    AjustarTamanoTexto();
+                    break;
+
+                case '%':
+                    operaciones.CalcularPerc(valores);
+                    txtResultado.Text = $"{(valores.Num1 / valores.Num2) / 100}";
                     AjustarTamanoTexto();
                     break;
             }
