@@ -11,6 +11,7 @@ namespace CalcuBasic
 {
     public partial class Form1 : Form
     {
+        bool operacion = false;
         public Form1()
         {
             InitializeComponent();
@@ -163,6 +164,7 @@ namespace CalcuBasic
         {
             operador = '/';
             valores.Num1 = Convert.ToDouble(txtResultado.Text);
+            operacion = true;
             txtResultado.Text = "/";
         }
 
@@ -170,6 +172,7 @@ namespace CalcuBasic
         {
             operador = 'x';
             valores.Num1 = Convert.ToDouble(txtResultado.Text);
+            operacion = true;
             txtResultado.Text = "x";
         }
 
@@ -177,6 +180,7 @@ namespace CalcuBasic
         {
             operador = '-';
             valores.Num1 = Convert.ToDouble(txtResultado.Text);
+            operacion = true; 
             txtResultado.Text = "-";
         }
 
@@ -184,6 +188,7 @@ namespace CalcuBasic
         {
             operador = '+';
             valores.Num1 = Convert.ToDouble(txtResultado.Text);
+            operacion= true;
             txtResultado.Text = "+";
         }
 
