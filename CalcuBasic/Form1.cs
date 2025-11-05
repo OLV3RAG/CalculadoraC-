@@ -11,7 +11,7 @@ namespace CalcuBasic
 {
     public partial class Form1 : Form
     {
-        bool operacion = false;
+        bool operacion = true;
         public Form1()
         {
             InitializeComponent();
@@ -162,7 +162,7 @@ namespace CalcuBasic
 
         private void btnDiv_Click(object sender, EventArgs e)
         {
-            if (operacion = true)
+            if (operacion == true)
             {
             operador = '/';
             valores.Num1 = Convert.ToDouble(txtResultado.Text);
@@ -177,7 +177,7 @@ namespace CalcuBasic
         private void btnMulti_Click(object sender, EventArgs e)
         {
 
-       if (operacion = true)
+       if (operacion == true)
             {
             operador = 'x';
             valores.Num1 = Convert.ToDouble(txtResultado.Text);
@@ -192,7 +192,7 @@ namespace CalcuBasic
         private void btnMinus_Click(object sender, EventArgs e)
         {
             
-       if (operacion = true)
+       if (operacion == true)
             {
             operador = '-';
             valores.Num1 = Convert.ToDouble(txtResultado.Text);
@@ -206,18 +206,17 @@ namespace CalcuBasic
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
-           
-           if (operacion == true)
-            {
             operador = '+';
+            if (operacion == true)
+            {
             valores.Num1 = Convert.ToDouble(txtResultado.Text);
-            txtResultado.Text = "+";
+
             }
            else
             {
                 operaciones.CalcularSum(valores);
             }
-               
+             txtResultado.Text = "+";
         }
 
         private void btnEq_Click(object sender, EventArgs e)
