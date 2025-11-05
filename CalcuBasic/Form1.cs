@@ -162,34 +162,62 @@ namespace CalcuBasic
 
         private void btnDiv_Click(object sender, EventArgs e)
         {
+            if (operacion = true)
+            {
             operador = '/';
             valores.Num1 = Convert.ToDouble(txtResultado.Text);
-            operacion = true;
+            }
+            else
+            {
+                operaciones.CalcularDiv(valores);
+            }
             txtResultado.Text = "/";
         }
 
         private void btnMulti_Click(object sender, EventArgs e)
         {
+
+       if (operacion = true)
+            {
             operador = 'x';
             valores.Num1 = Convert.ToDouble(txtResultado.Text);
-            operacion = true;
-            txtResultado.Text = "x";
+            }
+       else
+            {
+                operaciones.CalcularMult(valores);
+            }
+                txtResultado.Text = "x";
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
+            
+       if (operacion = true)
+            {
             operador = '-';
             valores.Num1 = Convert.ToDouble(txtResultado.Text);
-            operacion = true; 
+            }
+       else
+            {
+                operaciones.CalcularRes(valores);
+            }
             txtResultado.Text = "-";
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
+           
+           if (operacion == true)
+            {
             operador = '+';
             valores.Num1 = Convert.ToDouble(txtResultado.Text);
-            operacion= true;
             txtResultado.Text = "+";
+            }
+           else
+            {
+                operaciones.CalcularSum(valores);
+            }
+               
         }
 
         private void btnEq_Click(object sender, EventArgs e)
