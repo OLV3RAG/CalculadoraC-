@@ -215,10 +215,10 @@ namespace CalcuBasic
            else
             {
                 valores.Resultado = operaciones.CalcularSum(valores);
-            }
+            }  
              txtResultado.Text = "+";
         }
-
+         
         private void btnEq_Click(object sender, EventArgs e)
         {
 
@@ -229,32 +229,32 @@ namespace CalcuBasic
             switch (operador)
             {
                 case '+':
-                    valores.Resultado = operaciones.CalcularSum(valores);
-                    txtResultado.Text = $"{valores.Num1 + valores.Num2}";
+                    operaciones.CalcularSum(valores);
+                    txtResultado.Text = $"{valores.Resultado}";
                     AjustarTamanoTexto();
                     break;
 
                 case '-':
                    valores.Resultado = operaciones.CalcularRes(valores);
-                    txtResultado.Text = $"{valores.Num1 - valores.Num2}";
+                    txtResultado.Text = $"{valores.Resultado}";
                     AjustarTamanoTexto();
                     break;
 
                 case 'x':
                     valores.Resultado = operaciones.CalcularMult(valores);
-                    txtResultado.Text = $"{valores.Num1 * valores.Num2}";
+                    txtResultado.Text = $"{valores.Resultado}";
                     AjustarTamanoTexto();
                     break;
 
                 case '/':
                    valores.Resultado = operaciones.CalcularSum(valores);
-                    txtResultado.Text = $"{valores.Num1 / valores.Num2}";
+                    txtResultado.Text = $"{valores.Resultado}";
                     AjustarTamanoTexto();
                     break;
 
                 case '%':
                     valores.Resultado = operaciones.CalcularPerc(valores);
-                    txtResultado.Text = $"{(valores.Num1 * valores.Num2) / 100}";
+                    txtResultado.Text = $"{valores.Resultado}";
                     AjustarTamanoTexto();
                     break;
             }
