@@ -16,6 +16,7 @@ namespace CalcuBasic
         /// para operaciones secuenciales
         /// </summary>
         bool esSegundaOpe = false;
+        bool Dot = true;
 
         Operaciones operaciones = new Operaciones();
         Valores valores = new Valores();
@@ -108,7 +109,9 @@ namespace CalcuBasic
         private void btnAC_Click(object sender, EventArgs e)
         {
             txtResultado.Text = "0";
-            AjustarTamanoTexto();
+            valores.Resultado = 0;
+            valores.Num2 = 0;
+            valores.Num1 = 0;
         }
 
         private void btn7_Click(object sender, EventArgs e)
@@ -193,6 +196,10 @@ namespace CalcuBasic
                 {
                     txtResultado.Text = "5";
                 }
+                else
+                {
+                    txtResultado.Text += "5";
+                }
             }
 
             AjustarTamanoTexto();
@@ -271,7 +278,18 @@ namespace CalcuBasic
         }
         private void btnDot_Click(object sender, EventArgs e)
         {
-            txtResultado.Text = txtResultado.Text + ".";
+
+            
+            if (Dot == true)
+            {
+                txtResultado.Text += ".";
+                Dot = false;
+            } 
+            else
+            {
+            }
+                
+            
         }
 
         private void btnDiv_Click(object sender, EventArgs e)
