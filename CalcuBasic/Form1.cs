@@ -4,6 +4,7 @@ using System;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 
@@ -24,11 +25,11 @@ namespace CalcuBasic
 
         //propiedades
         //metodos constructores 
-        
+
         // metodos definidos por el programador
         // metodos del formulario o eventos del form
 
-       
+
 
         public Form1()
         {
@@ -206,6 +207,7 @@ namespace CalcuBasic
         }
         private void btn6_Click(object sender, EventArgs e)
         {
+
             if (txtResultado.Text == "0")
             {
                 txtResultado.Text = "";
@@ -215,7 +217,11 @@ namespace CalcuBasic
             {
                 if (esSegundaOpe)
                 {
-                    txtResultado.Text = "6";
+                    txtResultado.Text += "6";
+                }
+                else
+                {
+                    txtResultado.Text += "6";
                 }
             }
 
@@ -223,16 +229,21 @@ namespace CalcuBasic
         }
         private void btn1_Click(object sender, EventArgs e)
         {
+
             if (txtResultado.Text == "0")
             {
                 txtResultado.Text = "";
                 txtResultado.Text = txtResultado.Text + "1";
             }
-            else 
+            else
             {
                 if (esSegundaOpe)
                 {
-                    txtResultado.Text = "1";
+                    txtResultado.Text += "1";
+                }
+                else
+                {
+                    txtResultado.Text += "1";
                 }
             }
 
@@ -240,6 +251,7 @@ namespace CalcuBasic
         }
         private void btn2_Click(object sender, EventArgs e)
         {
+
             if (txtResultado.Text == "0")
             {
                 txtResultado.Text = "";
@@ -249,7 +261,11 @@ namespace CalcuBasic
             {
                 if (esSegundaOpe)
                 {
-                    txtResultado.Text = "2";
+                    txtResultado.Text += "2";
+                }
+                else
+                {
+                    txtResultado.Text += "2";
                 }
             }
 
@@ -282,18 +298,18 @@ namespace CalcuBasic
             {
                 txtResultado.Text += ".";
                 Dot = false;
-            } 
+            }
             else
             {
 
             }
 
-            
+
         }
 
         private void btnDiv_Click(object sender, EventArgs e)
         {
-            operador = '/';
+            operador = '+';
             if (esSegundaOpe == true)
             {
                 valores.Num2 = Convert.ToDouble(txtResultado.Text);
@@ -305,8 +321,8 @@ namespace CalcuBasic
             {
                 valores.Num1 = Convert.ToDouble(txtResultado.Text);
                 esSegundaOpe = true;
+                Dot = true;
             }
-
         }
 
         private void btnMulti_Click(object sender, EventArgs e)
@@ -356,16 +372,16 @@ namespace CalcuBasic
                 valores.Num1 = valores.Resultado;
                 txtResultado.Text = valores.Resultado.ToString();
             }
-           else
+            else
             {
                 valores.Num1 = Convert.ToDouble(txtResultado.Text);
                 esSegundaOpe = true;
                 Dot = true;
-            } 
-            
-             
+            }
+
+
         }
-         
+
         private void btnEq_Click(object sender, EventArgs e)
         {
             valores.Num2 = Convert.ToDouble(txtResultado.Text);
@@ -412,13 +428,31 @@ namespace CalcuBasic
                     AjustarTamanoTexto();
                     break;
             }
- 
+        }
+        //public void NumAsig(string numero)
+        //{
 
+        //    if (txtResultado.Text == "0")
+        //    {
+        //        txtResultado.Text = "";
+        //        txtResultado.Text = txtResultado.Text + numero;
+        //    }
+        //    else
+        //    {
+        //        if (esSegundaOpe)
+        //        {
+        //            txtResultado.Text += numero;
+        //        }
+        //        else
+        //        {
+        //            txtResultado.Text += numero;
+        //        }
+        //    }
 
-
+        //    AjustarTamanoTexto();
         }
     }
-}  
+} 
 
     
 
