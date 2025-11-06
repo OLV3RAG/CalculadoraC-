@@ -17,7 +17,6 @@ namespace CalcuBasic
         /// </summary>
         bool esSegundaOpe = false;
 
-
         Operaciones operaciones = new Operaciones();
         Valores valores = new Valores();
         char operador;
@@ -114,39 +113,105 @@ namespace CalcuBasic
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            if (txtResultado.Text == "0") txtResultado.Text = "";
-            txtResultado.Text = txtResultado.Text + "7";
+            if (txtResultado.Text == "0")
+            {
+                txtResultado.Text = "";
+                txtResultado.Text = txtResultado.Text + "7";
+            }
+            else
+            {
+                if (esSegundaOpe)
+                {
+                    txtResultado.Text = "7";
+                }
+            }
+
             AjustarTamanoTexto();
-    
+
         }
         private void btn8_Click(object sender, EventArgs e)
         {
-            if (txtResultado.Text == "0") txtResultado.Text = "";
-            txtResultado.Text = txtResultado.Text + "8";
+            if (txtResultado.Text == "0")
+            {
+                txtResultado.Text = "";
+                txtResultado.Text = txtResultado.Text + "8";
+            }
+            else
+            {
+                if (esSegundaOpe)
+                {
+                    txtResultado.Text = "8";
+                }
+            }
+
             AjustarTamanoTexto();
         }
         private void btn9_Click(object sender, EventArgs e)
         {
-            if (txtResultado.Text == "0") txtResultado.Text = "";
-            txtResultado.Text = txtResultado.Text + "9";
+            if (txtResultado.Text == "0")
+            {
+                txtResultado.Text = "";
+                txtResultado.Text = txtResultado.Text + "9";
+            }
+            else
+            {
+                if (esSegundaOpe)
+                {
+                    txtResultado.Text = "9";
+                }
+            }
+
             AjustarTamanoTexto();
         }
         private void btn4_Click(object sender, EventArgs e)
         {
-            if (txtResultado.Text == "0") txtResultado.Text = "";
-            txtResultado.Text = txtResultado.Text + "4";
+            if (txtResultado.Text == "0")
+            {
+                txtResultado.Text = "";
+                txtResultado.Text = txtResultado.Text + "4";
+            }
+            else
+            {
+                if (esSegundaOpe)
+                {
+                    txtResultado.Text = "4";
+                }
+            }
+
             AjustarTamanoTexto();
         }
         private void btn5_Click(object sender, EventArgs e)
         {
-            if (txtResultado.Text == "0") txtResultado.Text = "";
-            txtResultado.Text = txtResultado.Text + "5";
+            if (txtResultado.Text == "0")
+            {
+                txtResultado.Text = "";
+                txtResultado.Text = txtResultado.Text + "5";
+            }
+            else
+            {
+                if (esSegundaOpe)
+                {
+                    txtResultado.Text = "5";
+                }
+            }
+
             AjustarTamanoTexto();
         }
         private void btn6_Click(object sender, EventArgs e)
         {
-            if (txtResultado.Text == "0") txtResultado.Text = "";
-            txtResultado.Text = txtResultado.Text + "6";
+            if (txtResultado.Text == "0")
+            {
+                txtResultado.Text = "";
+                txtResultado.Text = txtResultado.Text + "6";
+            }
+            else
+            {
+                if (esSegundaOpe)
+                {
+                    txtResultado.Text = "6";
+                }
+            }
+
             AjustarTamanoTexto();
         }
         private void btn1_Click(object sender, EventArgs e)
@@ -185,8 +250,19 @@ namespace CalcuBasic
         }
         private void btn3_Click(object sender, EventArgs e)
         {
-            if (txtResultado.Text == "0") txtResultado.Text = "";
-            txtResultado.Text = txtResultado.Text + "3";
+            if (txtResultado.Text == "0")
+            {
+                txtResultado.Text = "";
+                txtResultado.Text = txtResultado.Text + "3";
+            }
+            else
+            {
+                if (esSegundaOpe)
+                {
+                    txtResultado.Text = "3";
+                }
+            }
+
             AjustarTamanoTexto();
         }
         private void btnZero_Click(object sender, EventArgs e)
@@ -231,6 +307,7 @@ namespace CalcuBasic
                 valores.Num1 = Convert.ToDouble(txtResultado.Text);
                 esSegundaOpe = true;
             }
+
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
@@ -274,36 +351,45 @@ namespace CalcuBasic
         private void btnEq_Click(object sender, EventArgs e)
         {
             valores.Num2 = Convert.ToDouble(txtResultado.Text);
-
+            esSegundaOpe = false;
             switch (operador)
             {
                 case '+':
                     valores.Resultado = operaciones.CalcularSum(valores);
+                    valores.Num1 = valores.Resultado;
                     valores.Num2 = 0;
                     txtResultado.Text = $"{valores.Resultado}";
                     AjustarTamanoTexto();
                     break;
 
                 case '-':
-                   valores.Resultado = operaciones.CalcularRes(valores);
+                    valores.Resultado = operaciones.CalcularRes(valores);
+                    valores.Num1 = valores.Resultado;
+                    valores.Num2 = 0;
                     txtResultado.Text = $"{valores.Resultado}";
                     AjustarTamanoTexto();
                     break;
 
                 case 'x':
                     valores.Resultado = operaciones.CalcularMult(valores);
+                    valores.Num1 = valores.Resultado;
+                    valores.Num2 = 0;
                     txtResultado.Text = $"{valores.Resultado}";
                     AjustarTamanoTexto();
                     break;
 
                 case '/':
-                   valores.Resultado = operaciones.CalcularSum(valores);
+                    valores.Resultado = operaciones.CalcularDiv(valores);
+                    valores.Num1 = valores.Resultado;
+                    valores.Num2 = 0;
                     txtResultado.Text = $"{valores.Resultado}";
                     AjustarTamanoTexto();
                     break;
 
                 case '%':
                     valores.Resultado = operaciones.CalcularPerc(valores);
+                    valores.Num1 = valores.Resultado;
+                    valores.Num2 = 0;
                     txtResultado.Text = $"{valores.Resultado}";
                     AjustarTamanoTexto();
                     break;

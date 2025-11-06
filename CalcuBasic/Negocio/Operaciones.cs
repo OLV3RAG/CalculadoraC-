@@ -9,35 +9,35 @@ namespace CalcuBasic.Negocio
 {
     public class Operaciones
     {
-        public int CalcularSum(Valores valores)
+        public double CalcularSum(Valores valores)
         {
-            valores.Resultado = (int)(decimal)(valores.Num1 + valores.Num2);
+            valores.Resultado = valores.Num1 + valores.Num2;
             return valores.Resultado;
         }
 
-        public int CalcularRes(Valores valores)
+        public double CalcularRes(Valores valores)
         {
-            valores.Resultado = (int)(decimal)(valores.Num1 - valores.Num2);
+            valores.Resultado = (valores.Num1 - valores.Num2);
             return valores.Resultado;
         }
 
-        public int CalcularMult(Valores valores)
+        public double CalcularMult(Valores valores)
         {
-            valores.Resultado = (int)(decimal)(valores.Num1 * valores.Num2);
+            valores.Resultado = (valores.Num1 * valores.Num2);
             return valores.Resultado;
         }
 
-        public int CalcularDiv(Valores valores)
+        public double CalcularDiv(Valores valores)
         {
-            valores.Resultado = (int)(decimal)(valores.Num1 / valores.Num2);
+            valores.Resultado = (valores.Num1 / valores.Num2);
             return valores.Resultado;
         }
 
-        public int CalcularPerc(Valores valores)
+        public double CalcularPerc(Valores valores)
         {
             if (valores.Num2 == 0)
                 throw new DivideByZeroException("No se puede dividir entre cero.");
-            valores.Resultado = (int)(decimal)(valores.Num1 * valores.Num2) / 100;
+            valores.Resultado = (valores.Num1 * valores.Num2) / 100;
             return valores.Resultado;
         }
     }

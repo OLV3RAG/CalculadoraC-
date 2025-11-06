@@ -10,6 +10,6 @@ namespace CalcuBasic.Entidades
     {
         public double Num1 { get; set; }
         public double Num2 { get; set; }
-        public int Resultado { get; set; }
+        public double Resultado { get; set; }
     }
 }
