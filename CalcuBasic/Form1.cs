@@ -11,16 +11,31 @@ namespace CalcuBasic
 {
     public partial class Form1 : Form
     {
-        bool operacion = true;
-        public Form1()
-        {
-            InitializeComponent();
-        }
+        /// <summary>
+        /// Variable para identificar que es una segunda operacion
+        /// para operaciones secuenciales
+        /// </summary>
+        bool esSegundaOpe = false;
+
 
         Operaciones operaciones = new Operaciones();
         Valores valores = new Valores();
         char operador;
 
+        //propiedades
+        //metodos constructores 
+        
+        // metodos definidos por el programador
+        // metodos del formulario o eventos del form
+
+       
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        #region Metodos de formatos de texto
         private void AjustarTamanoTexto()
         {
             int longitud = txtResultado.Text.Length;
@@ -72,6 +87,7 @@ namespace CalcuBasic
             txtResultado.Text = actual;
             AjustarTamanoTexto();
         }
+        #endregion
 
         private void btnParentI_Click(object sender, EventArgs e)
         {
@@ -135,14 +151,36 @@ namespace CalcuBasic
         }
         private void btn1_Click(object sender, EventArgs e)
         {
-            if (txtResultado.Text == "0") txtResultado.Text = "";
-            txtResultado.Text = txtResultado.Text + "1";
+            if (txtResultado.Text == "0")
+            {
+                txtResultado.Text = "";
+                txtResultado.Text = txtResultado.Text + "1";
+            }
+            else 
+            {
+                if (esSegundaOpe)
+                {
+                    txtResultado.Text = "1";
+                }
+            }
+
             AjustarTamanoTexto();
         }
         private void btn2_Click(object sender, EventArgs e)
         {
-            if (txtResultado.Text == "0") txtResultado.Text = "";
-            txtResultado.Text = txtResultado.Text + "2";
+            if (txtResultado.Text == "0")
+            {
+                txtResultado.Text = "";
+                txtResultado.Text = txtResultado.Text + "2";
+            }
+            else
+            {
+                if (esSegundaOpe)
+                {
+                    txtResultado.Text = "2";
+                }
+            }
+
             AjustarTamanoTexto();
         }
         private void btn3_Click(object sender, EventArgs e)
@@ -162,74 +200,86 @@ namespace CalcuBasic
 
         private void btnDiv_Click(object sender, EventArgs e)
         {
-            if (operacion == true)
-            {
             operador = '/';
-            valores.Num1 = Convert.ToDouble(txtResultado.Text);
+            if (esSegundaOpe == true)
+            {
+                valores.Num2 = Convert.ToDouble(txtResultado.Text);
+                valores.Resultado = operaciones.CalcularSum(valores);
+                valores.Num1 = valores.Resultado;
+                txtResultado.Text = valores.Resultado.ToString();
             }
             else
             {
-                valores.Resultado = operaciones.CalcularDiv(valores);
+                valores.Num1 = Convert.ToDouble(txtResultado.Text);
+                esSegundaOpe = true;
             }
-            txtResultado.Text = "/";
+
         }
 
         private void btnMulti_Click(object sender, EventArgs e)
         {
-
-       if (operacion == true)
-            {
             operador = 'x';
-            valores.Num1 = Convert.ToDouble(txtResultado.Text);
-            }
-       else
+            if (esSegundaOpe == true)
             {
+                valores.Num2 = Convert.ToDouble(txtResultado.Text);
                 valores.Resultado = operaciones.CalcularMult(valores);
+                valores.Num1 = valores.Resultado;
+                txtResultado.Text = valores.Resultado.ToString();
             }
-                txtResultado.Text = "x";
+            else
+            {
+                valores.Num1 = Convert.ToDouble(txtResultado.Text);
+                esSegundaOpe = true;
+            }
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
-            
-       if (operacion == true)
-            {
+
             operador = '-';
-            valores.Num1 = Convert.ToDouble(txtResultado.Text);
-            }
-       else
+            if (esSegundaOpe == true)
             {
+                valores.Num2 = Convert.ToDouble(txtResultado.Text);
                 valores.Resultado = operaciones.CalcularRes(valores);
+                valores.Num1 = valores.Resultado;
+                txtResultado.Text = valores.Resultado.ToString();
             }
-            txtResultado.Text = "-";
+            else
+            {
+                valores.Num1 = Convert.ToDouble(txtResultado.Text);
+                esSegundaOpe = true;
+            }
+
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
             operador = '+';
-            if (operacion == true)
+            if (esSegundaOpe == true)
             {
-            valores.Num1 = Convert.ToDouble(txtResultado.Text);
-
+                valores.Num2 = Convert.ToDouble(txtResultado.Text);
+                valores.Resultado = operaciones.CalcularSum(valores);
+                valores.Num1 = valores.Resultado;
+                txtResultado.Text = valores.Resultado.ToString();
             }
            else
             {
-                valores.Resultado = operaciones.CalcularSum(valores);
-            }  
-             txtResultado.Text = "+";
+                valores.Num1 = Convert.ToDouble(txtResultado.Text);
+                esSegundaOpe = true;
+            } 
+            
+             
         }
          
         private void btnEq_Click(object sender, EventArgs e)
         {
-
-            string[] splitResultado = txtResultado.Text.Split(operador);
-            string num = splitResultado[1];
-            valores.Num2 = Convert.ToDouble(num);
+            valores.Num2 = Convert.ToDouble(txtResultado.Text);
 
             switch (operador)
             {
                 case '+':
-                    operaciones.CalcularSum(valores);
+                    valores.Resultado = operaciones.CalcularSum(valores);
+                    valores.Num2 = 0;
                     txtResultado.Text = $"{valores.Resultado}";
                     AjustarTamanoTexto();
                     break;
