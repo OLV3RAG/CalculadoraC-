@@ -194,7 +194,7 @@ namespace CalcuBasic
             {
                 if (esSegundaOpe)
                 {
-                    txtResultado.Text = "5";
+                    txtResultado.Text += "5";
                 }
                 else
                 {
@@ -278,8 +278,6 @@ namespace CalcuBasic
         }
         private void btnDot_Click(object sender, EventArgs e)
         {
-
-            
             if (Dot == true)
             {
                 txtResultado.Text += ".";
@@ -287,8 +285,9 @@ namespace CalcuBasic
             } 
             else
             {
+
             }
-                
+
             
         }
 
@@ -361,6 +360,7 @@ namespace CalcuBasic
             {
                 valores.Num1 = Convert.ToDouble(txtResultado.Text);
                 esSegundaOpe = true;
+                Dot = true;
             } 
             
              
